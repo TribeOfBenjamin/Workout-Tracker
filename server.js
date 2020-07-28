@@ -19,7 +19,7 @@ mongoose.connect(MONGODB_URI);
 
 // Put routes here (for later)
 require("./routes/workout_controller");
-//require("./routes/htmlRoutes.js")(app);
+require("./routes/htmlRoutes.js");
 
 app.listen(PORT, () => {
     console.log(
