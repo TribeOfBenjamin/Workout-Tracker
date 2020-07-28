@@ -18,7 +18,8 @@ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
 mongoose.connect(MONGODB_URI);
 
 // Put routes here (for later)
-
+require("./routes/workout_controller")(app);
+//require("./routes/htmlRoutes.js")(app);
 
 app.listen(PORT, () => {
     console.log(
