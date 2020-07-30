@@ -19,7 +19,10 @@ mongoose.connect(MONGODB_URI);
 
 // Require routes (do I need (app) after these?)
 require("./routes/workout_controller");
-require("./routes/htmlRoutes.js")(app);
+// require("./routes/htmlRoutes.js")(app);
+const htmlRoutes = require("./routes/htmlRoutes.js");
+htmlRoutes(app);
+
 
 app.listen(PORT, () => {
     console.log(
