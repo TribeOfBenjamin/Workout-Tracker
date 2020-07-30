@@ -14,10 +14,13 @@ router.get("/api/workouts", (req, res) => {
 });
 
 router.put("/api/workouts/:id", (req, res) => {
-    console.log(`'Complete' button clicked; this is req.body: ` + JSON.stringify(req.body));
+    console.log(`'Complete' button clicked; this is req.body.type: ` + JSON.stringify(req.body.type));
     //res.json({message: "working on PUT request."})
 
-    Workout.update(req.body)
+    Workout.update({ exercises: {
+            type: req.body.type
+            }
+        })
     .then(dbWorkout => {
       res.json(dbWorkout);
     })
