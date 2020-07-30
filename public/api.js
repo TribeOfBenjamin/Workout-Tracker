@@ -1,3 +1,4 @@
+// These are API requests (not routes)
 const API = {
   async getLastWorkout() {
     let res;
@@ -17,6 +18,7 @@ const API = {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
+      // on the backend this ^ is going to be req.body
     });
 
     const json = await res.json();

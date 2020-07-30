@@ -13,4 +13,9 @@ router.get("/api/workouts", (req, res) => {
         });
 });
 
+router.put("/api/workouts/:id", (req, res) => {
+    console.log(req.body);
+    res.json({message: "working on it."})
+})
+
 module.exports = router;

@@ -17,9 +17,9 @@ app.use(express.static("public"));
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
 mongoose.connect(MONGODB_URI);
 
-// Put routes here (for later)
+// Require routes (do I need (app) after these?)
 require("./routes/workout_controller");
-require("./routes/htmlRoutes.js");
+require("./routes/htmlRoutes.js")(app);
 
 app.listen(PORT, () => {
     console.log(
