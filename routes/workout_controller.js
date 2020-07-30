@@ -9,18 +9,27 @@ router.get("/api/workouts", (req, res) => {
             res.json(workouts);
         })
         .catch(err => {
-            console.log("IM AN ERROR!");
             res.status(400).json(err);
         });
 });
 
 router.put("/api/workouts/:id", (req, res) => {
-    console.log(req.body);
-    res.json({message: "working on PUT request."})
+    console.log(`'Complete' button clicked; this is req.body: ` + JSON.stringify(req.body));
+    //res.json({message: "working on PUT request."})
+
+    Workout.update(req.body)
+    .then(dbWorkout => {
+      res.json(dbWorkout);
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
 });
 
 router.post("/api/workouts", (req, res) => {
-    console.log(req.body);
+    console.log(`'New Workout' button clicked; this is req.body: ` + JSON.stringify(req.body));
+    //res.json({message: "working on POST request."})
+
     Workout.create(req.body)
     .then(dbWorkout => {
       res.json(dbWorkout);
