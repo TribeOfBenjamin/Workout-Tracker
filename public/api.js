@@ -13,9 +13,6 @@ const API = {
   },
   async addExercise(data) {
     const id = location.search.split("=")[1];
-    
-    // I added this console.log
-    console.log("I'm in addExercise; this is parameter data.type: " + data.type);
 
     const res = await fetch("/api/workouts/" + id, {
       method: "PUT",
@@ -29,9 +26,6 @@ const API = {
     return json;
   },
   async createWorkout(data = {}) {
-    
-    // Where is this?
-    console.log("HELLO THERE!!!");
     
     const res = await fetch("/api/workouts", {
       method: "POST",

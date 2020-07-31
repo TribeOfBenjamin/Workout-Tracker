@@ -24,13 +24,13 @@ const workoutSchema = new Schema({
               type: Number,
               required: "How many minutes did the exercise take to perform?"
           },
-          // Changed the format since it's just one key/value pair. If buggy, try the other way.
           distance: Number,
           weight: Number,
           reps: Number,
           sets: Number
       }
-  ]
+  ],
+  totalDuration: Number
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);
